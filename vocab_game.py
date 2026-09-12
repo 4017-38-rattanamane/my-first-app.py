@@ -36,7 +36,6 @@ def show_result_dialog(ans1, ans2):
     u_ans2 = ans2.strip().lower()
     u_ans3 = ans3.strip().lower()
     u_ans4 = ans4.strip().lower()
-
     # ตรวจข้อ 1
     if u_ans1 == "apple":
         st.success("✅ ข้อ 1: ถูกต้อง")
@@ -52,22 +51,22 @@ def show_result_dialog(ans1, ans2):
         st.error(f"❌ ข้อ 2: ยังไม่ถูกต้อง (คุณตอบ '{u_ans2}')")
 
     # ✏️ [พื้นที่สำหรับนักเรียน]: เพิ่มตรวจข้อ 3, 4 ตรงนี้
-
-      # ตรวจข้อ 3
+    
+     # ตรวจข้อ 3
     if u_ans3 == "car":
         st.success("✅ ข้อ 3: ถูกต้อง")
         score += 1
     else:
         st.error(f"❌ ข้อ 3: ยังไม่ถูกต้อง (คุณตอบ '{u_ans3}')")
 
-          # ตรวจข้อ 4
+    # ตรวจข้อ 4
     if u_ans4 == "laptop":
         st.success("✅ ข้อ 4: ถูกต้อง")
         score += 1
     else:
         st.error(f"❌ ข้อ 4: ยังไม่ถูกต้อง (คุณตอบ '{u_ans4}')")
 
-
+    
     st.info(f"🏆 ได้คะแนนรวม: {score} คะแนน")
 
     if score == 4:
@@ -102,22 +101,21 @@ ans2 = st.text_input(
     "ข้อ 2: Cats love to eat `f _ s h`. 🐟",
     value=st.session_state.ans2_val,
 )
+ans3 = st.text_input(
+    "ข้อ 3: `c_r`. 🚗",
+    value=st.session_state.ans3_val,
+)
+ans4 = st.text_input(
+    "ข้อ 4: `l_pt_p`. 💻",
+    value=st.session_state.ans4_val,
+)
 
 # อัปเดตค่าล่าสุดเข้าตัวแปร
 st.session_state.ans1_val = ans1
 st.session_state.ans2_val = ans2
 st.session_state.ans3_val = ans3
 st.session_state.ans4_val = ans4
-
 # ✏️ [พื้นที่สำหรับนักเรียน]: เพิ่มข้อ 3, 4 ตรงนี้
-ans3 = st.text_input(
-    "ข้อ 3: `C_r`. 🚗",
-    value=st.session_state.ans3_val,
-)
-ans2 = st.text_input(
-    "ข้อ 4: `La_t_p`. 💻",
-    value=st.session_state.ans4_val,
-)
 
 
 # 4. ปุ่มส่งคำตอบ
@@ -135,5 +133,3 @@ if st.session_state.get("is_ended", False):
 
 st.divider()
 st.write("นางสาวรัตนมณี รัตนะกุล เลขที่ 38 ม.4/17")
-
-
